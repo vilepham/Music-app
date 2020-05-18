@@ -11,27 +11,15 @@ window.addEventListener('load', () => {
         '#52d3fa'
     ]
 
-    //const visuals, colors
-
-    //event listener pads for each pad, index
-    //reset current time .currentTime = 0
-    //on click sounds play
-    //call create bubbles
-
-
-    //array colors
-    //function that makes bubbles (index)
-        //create element => visual append child
-        //colors
-        //animation
-        //bubble remove itself after animation ends
-
+    //Enable sounds with each click on pads
     pads.forEach((pad, index) => {
         pad.addEventListener('click', function(){
             sounds[index].play();
             sounds[index].currentTime = 0;
-
+            
+            //Create bubbles with click
             createBubbles(index);
+            //Declare here because index is a local variable inside this function
         });
     });
 
@@ -44,6 +32,5 @@ window.addEventListener('load', () => {
             visuals.removeChild(bubble);
         });
     };
-    //.className .classList .style.height
 });
 
